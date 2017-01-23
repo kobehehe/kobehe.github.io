@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="对的 今天是一个大日子，因为我的第一篇博客终于出场了，所以我写一篇记录一下。好的，写完了。哈哈哈哈">
+<meta name="description" content="随着做的项目越来越多，越来越感觉到HTTP这个东西的重要性。今天把基础的知识总结一下。1xx:指示信息－－表示请求已接受，继续处理2xx:成功－－表示请求已被成功接受、理解、接受3xx:重定向－－要求完成请求必须进行更进一步的操作4xx:客户端错误－－请求有语法错误或请求无法实现5xx:服务器端错误－－服务器未能实现合法的请求常见状态码：200 OK">
 <meta property="og:type" content="article">
-<meta property="og:title" content="处女作闪亮登场">
-<meta property="og:url" content="http://yoursite.com/2017/01/12/随便写点/index.html">
+<meta property="og:title" content="http状态码">
+<meta property="og:url" content="http://yoursite.com/2017/01/23/http状态码/index.html">
 <meta property="og:site_name" content="那年一路向北...">
-<meta property="og:description" content="对的 今天是一个大日子，因为我的第一篇博客终于出场了，所以我写一篇记录一下。好的，写完了。哈哈哈哈">
-<meta property="og:updated_time" content="2017-01-13T08:28:42.000Z">
+<meta property="og:description" content="随着做的项目越来越多，越来越感觉到HTTP这个东西的重要性。今天把基础的知识总结一下。1xx:指示信息－－表示请求已接受，继续处理2xx:成功－－表示请求已被成功接受、理解、接受3xx:重定向－－要求完成请求必须进行更进一步的操作4xx:客户端错误－－请求有语法错误或请求无法实现5xx:服务器端错误－－服务器未能实现合法的请求常见状态码：200 OK">
+<meta property="og:updated_time" content="2017-01-23T08:00:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="处女作闪亮登场">
-<meta name="twitter:description" content="对的 今天是一个大日子，因为我的第一篇博客终于出场了，所以我写一篇记录一下。好的，写完了。哈哈哈哈">
+<meta name="twitter:title" content="http状态码">
+<meta name="twitter:description" content="随着做的项目越来越多，越来越感觉到HTTP这个东西的重要性。今天把基础的知识总结一下。1xx:指示信息－－表示请求已接受，继续处理2xx:成功－－表示请求已被成功接受、理解、接受3xx:重定向－－要求完成请求必须进行更进一步的操作4xx:客户端错误－－请求有语法错误或请求无法实现5xx:服务器端错误－－服务器未能实现合法的请求常见状态码：200 OK">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/01/12/随便写点/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/01/23/http状态码/"/>
 
 
 
 
 
-  <title> 处女作闪亮登场 | 那年一路向北... </title>
+  <title> http状态码 | 那年一路向北... </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -230,7 +230,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/12/随便写点/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/23/http状态码/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="xuxiaochen">
@@ -254,7 +254,7 @@
             
             
               
-                处女作闪亮登场
+                http状态码
               
             
           </h1>
@@ -269,8 +269,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-12T14:29:49+08:00">
-                2017-01-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-23T11:30:05+08:00">
+                2017-01-23
               </time>
             
 
@@ -305,7 +305,10 @@
       
 
       
-        <p>对的 今天是一个大日子，因为我的第一篇博客终于出场了，所以我写一篇记录一下。好的，写完了。哈哈哈哈</p>
+        <p>随着做的项目越来越多，越来越感觉到HTTP这个东西的重要性。今天把基础的知识总结一下。<br>1xx:指示信息－－表示请求已接受，继续处理<br>2xx:成功－－表示请求已被成功接受、理解、接受<br>3xx:重定向－－要求完成请求必须进行更进一步的操作<br>4xx:客户端错误－－请求有语法错误或请求无法实现<br>5xx:服务器端错误－－服务器未能实现合法的请求<br>常见状态码：<br>200 OK                        //客户端请求成功<br>400 Bad Request               //客户端请求有语法错误，不能被服务器所理解<br>401 Unauthorized              //请求未经授权，这个状态代码必须和WWW-Authenticate报头域一起使用<br>403 Forbidden                 //服务器收到请求，但是拒绝提供服务<br>404 Not Found                 //请求资源不存在，eg：输入了错误的URL<br>500 Internal Server Error     //服务器发生不可预期的错误<br>502 Bad Gateway是指错误网关     //php语言中语法错误 通常也会返给页面这个错误<br>503 Server Unavailable        //服务器当前不能处理客户端的请求，一段时间后可能恢复正常</p>
+<p>HTTP工作原理<br>1，浏览器向DNS服务器请求解析该URL中的域名所对应的IP地址;<br>2, 解析出IP地址后，根据该ip地址和默认端口80，和服务器建立TCP链接；<br>3，浏览器发出读取文件的http请求，该请求保文作为tcp三次握手的第三个报文发给服务器；<br>4，服务器对浏览器作出响应，并把对应的html文本发给浏览器<br>5，释放tcp链接（若connection 模式为close，则服务器主动关闭TCP连接，客户端被动关闭连接，释放TCP连接;若connection 模式为keepalive，则该连接会保持一段时间，在该时间内可以继续接收请求）;<br>6，浏览器拿到html文本并显示内容</p>
+<p>GET和POST请求的区别，</p>
+<p>   1，GET提交的数据会放在URL之后，以?分割URL和传输数据，参数之间以&amp;相连，如EditPosts.aspx?name=test1&amp;id=123456. POST方法是把提交的数据放在HTTP包的Body中.<br>    2，GET提交的数据大小有限制（因为浏览器对URL的长度有限制），而POST方法提交的数据没有限制.<br>    3，GET方式需要使用Request.QueryString来取得变量的值，而POST方式通过Request.Form来获取变量的值。<br>    4，GET方式提交数据，会带来安全问题，比如一个登录页面，通过GET方式提交数据时，用户名和密码将出现在URL上，如果页面可以被缓存或者其他人可以访问这台机器，就可以从历史记录获得该用户的账号和密码.</p>
 
       
     </div>
@@ -332,15 +335,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/01/12/随便写点/" rel="next" title="处女作闪亮登场">
+                <i class="fa fa-chevron-left"></i> 处女作闪亮登场
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/01/23/http状态码/" rel="prev" title="http状态码">
-                http状态码 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

@@ -84,22 +84,16 @@
 
 
 
-<meta name="description" content="1.ls 查看当前目录下所有的文件和目录。2.pwd 获得当前工作目录的绝对路径名称。3.cd 改变当前工作目录。4.date 显示或者修改系统时间和日期。5.passwd 用于设置用户的密码。6.su 用于改变当前用户身份。7.clear 用来清除屏幕信息。8.man 显示指定命令的帮助信息9.who 显示当前登录到系统的用户10.w 显示当前登录到系统的用户信息
-
-uname 显示操作系统的相">
+<meta name="description" content="1，Webserver(nginx):这一层可以轻松分布式部署的，结合智能DNS解析可以简易的防止单点故障、实现区域访问加速，结合lvs很容易实现负载均衡。这一层主要负责处理静态请求和转发php请求至第二层的php处理节点，至于静态资源地址(http://misc.xxxx.com)可以单独拿出来部署，或者直接使用商用的云存储服务（国内七牛不错，国外有Amazon S3）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="常用的linux命令">
-<meta property="og:url" content="http://yoursite.com/2017/02/06/常用的linux命令/index.html">
+<meta property="og:title" content="php支持高并发的网站的处理">
+<meta property="og:url" content="http://yoursite.com/2017/02/10/php支持高并发的网站的处理/index.html">
 <meta property="og:site_name" content="那年一路向北...">
-<meta property="og:description" content="1.ls 查看当前目录下所有的文件和目录。2.pwd 获得当前工作目录的绝对路径名称。3.cd 改变当前工作目录。4.date 显示或者修改系统时间和日期。5.passwd 用于设置用户的密码。6.su 用于改变当前用户身份。7.clear 用来清除屏幕信息。8.man 显示指定命令的帮助信息9.who 显示当前登录到系统的用户10.w 显示当前登录到系统的用户信息
-
-uname 显示操作系统的相">
-<meta property="og:updated_time" content="2017-02-06T02:21:47.000Z">
+<meta property="og:description" content="1，Webserver(nginx):这一层可以轻松分布式部署的，结合智能DNS解析可以简易的防止单点故障、实现区域访问加速，结合lvs很容易实现负载均衡。这一层主要负责处理静态请求和转发php请求至第二层的php处理节点，至于静态资源地址(http://misc.xxxx.com)可以单独拿出来部署，或者直接使用商用的云存储服务（国内七牛不错，国外有Amazon S3）">
+<meta property="og:updated_time" content="2017-02-10T06:19:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="常用的linux命令">
-<meta name="twitter:description" content="1.ls 查看当前目录下所有的文件和目录。2.pwd 获得当前工作目录的绝对路径名称。3.cd 改变当前工作目录。4.date 显示或者修改系统时间和日期。5.passwd 用于设置用户的密码。6.su 用于改变当前用户身份。7.clear 用来清除屏幕信息。8.man 显示指定命令的帮助信息9.who 显示当前登录到系统的用户10.w 显示当前登录到系统的用户信息
-
-uname 显示操作系统的相">
+<meta name="twitter:title" content="php支持高并发的网站的处理">
+<meta name="twitter:description" content="1，Webserver(nginx):这一层可以轻松分布式部署的，结合智能DNS解析可以简易的防止单点故障、实现区域访问加速，结合lvs很容易实现负载均衡。这一层主要负责处理静态请求和转发php请求至第二层的php处理节点，至于静态资源地址(http://misc.xxxx.com)可以单独拿出来部署，或者直接使用商用的云存储服务（国内七牛不错，国外有Amazon S3）">
 
 
 
@@ -127,13 +121,13 @@ uname 显示操作系统的相">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/02/06/常用的linux命令/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/02/10/php支持高并发的网站的处理/"/>
 
 
 
 
 
-  <title> 常用的linux命令 | 那年一路向北... </title>
+  <title> php支持高并发的网站的处理 | 那年一路向北... </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -236,7 +230,7 @@ uname 显示操作系统的相">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/06/常用的linux命令/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/10/php支持高并发的网站的处理/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="xuxiaochen">
@@ -260,7 +254,7 @@ uname 显示操作系统的相">
             
             
               
-                常用的linux命令
+                php支持高并发的网站的处理
               
             
           </h1>
@@ -275,8 +269,8 @@ uname 显示操作系统的相">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-06T09:43:08+08:00">
-                2017-02-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-10T13:52:24+08:00">
+                2017-02-10
               </time>
             
 
@@ -311,35 +305,7 @@ uname 显示操作系统的相">
       
 
       
-        <p>1.ls 查看当前目录下所有的文件和目录。<br>2.pwd 获得当前工作目录的绝对路径名称。<br>3.cd 改变当前工作目录。<br>4.date 显示或者修改系统时间和日期。<br>5.passwd 用于设置用户的密码。<br>6.su 用于改变当前用户身份。<br>7.clear 用来清除屏幕信息。<br>8.man 显示指定命令的帮助信息<br>9.who 显示当前登录到系统的用户<br>10.w 显示当前登录到系统的用户信息</p>
-<ol>
-<li>uname 显示操作系统的相关信息</li>
-<li>uptime输出系统任务队列信息<a id="more"></a></li>
-<li>last 列出目前与过去登入系统的用户相关信息</li>
-<li>dmesg 显示开机信息</li>
-<li>free 显示系统内存状态</li>
-<li>top 显示系统各个进程的资源占用</li>
-<li>ps 显示系统进程在瞬间的运行状态</li>
-<li>mkdir 用于创建一个目录 －p指定路径</li>
-<li>more 用于显示在屏幕上显示不完的内容</li>
-<li>cat 将文件的内容输出到标准输出，还可以合并文件</li>
-<li>diff 用来比较文件的差异</li>
-<li>grep 根据指定字符串 对文件逐行搜索 若找到这个字符串 酒输出改行内容</li>
-<li>rm 用来删除某个目录及其下的所有文件</li>
-<li>touch 用来改变指定文件的访问时间和修改时间</li>
-<li>ln 用来在文件和目录之间创建链接</li>
-<li>file 用来显示文件的类型</li>
-<li>cp 用来将给出的文件目录复制到另一个文件或者目录中</li>
-<li>find 用来指定的路径下查找指定的文件</li>
-<li>split 用来分割文档，将一个文件分成数个</li>
-<li>mv 用来移动文件或目录<br>压缩与解压<br>1.zip/unzip 将一般的文件或者目录进行压缩或者解压，默认生成“.zip” 为后缀的压缩包<br>2.gzip/gunzip 将一般的文件进行压缩或者解压。压缩文件的预设的扩展名为“.gz”<br>3.tar 对文件或者目录进行打包归档 归档成一个文件 但是并不进行压缩<br>4.dd 用来转换或复制文件<br>5.cpio 通过重定向的方式将文件进行打包 备份 还原 恢复<br>磁盘管理与维护</li>
-<li>df 用来检查linux系统的磁盘空间占用情况</li>
-<li>du 用来显示文件或目录所占用的磁盘空间情况</li>
-<li>fsck 命令用来检查文件系统冰尝试修复错误</li>
-<li>用来强制把内存中的数据写回硬盘，以免数据的丢失</li>
-<li>eject 用来退出抽取式设备</li>
-<li>mount／umount 挂载以及卸载指定的文件系统</li>
-</ol>
+        <p>1，Webserver(nginx):这一层可以轻松分布式部署的，结合智能DNS解析可以简易的防止单点故障、实现区域访问加速，结合lvs很容易实现负载均衡。这一层主要负责处理静态请求和转发php请求至第二层的php处理节点，至于静态资源地址(<a href="http://misc.xxxx.com)可以单独拿出来部署，或者直接使用商用的云存储服务（国内七牛不错，国外有Amazon" target="_blank" rel="external">http://misc.xxxx.com)可以单独拿出来部署，或者直接使用商用的云存储服务（国内七牛不错，国外有Amazon</a> S3）<br><a id="more"></a><br>2，php处理节点：一个节点其实就是一个监听端口的系统进程，webserver的请求通过负载均衡器进行分发，很好实现分布式和负载均衡。类似于php自带的php-fpm,其实facebook出的hhvm性能非常好，但是还不是很稳定。<br>3，高速缓存：用的memcached,这一层的作用主要减轻数据库io和加快热数据访问。主要有两种方式，一种在程序的全局层面加一个缓存处理，这种方法代码耦合度低，但是有效命中率不高，有些项目不一定适应，另一种是具体的数据存取加缓存处理，这种办法耦合度较高，但是缓存命中率非常高，几乎没有无效缓存存在。<br>4，数据库 ：我现在的项目数据规模不大，暂时只用了单台数据库，但是程序逻辑上已做好了数据库线性扩展的准备。其实数据库层的扩展是老生常谈了，常用手段是分库分表，这一块需要在前期的代码就打下基础，另外更平滑地手段是使用中间件，比如360的Atlas，阿里巴巴的cobar，淘宝的TDDL，中间件可以在不大范围变更代码的情况下扩展，但是具体的使用场景还是有限的，具体项目还需单独考察。<br>5，其他：根据不同的项目，架构还可以选择性的使用队列，我现在用的beantalkd,redis也是一个很好的选择。队列常用的使用环境是邮件发送和站内消息推送上面，在某些场景下也可以作为核心数据库的缓冲，对应对大并发或者突发性流量也是不错的选择。</p>
 
       
     </div>
@@ -366,8 +332,8 @@ uname 显示操作系统的相">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/23/系统执行时间缓慢的原因分析/" rel="next" title="系统执行时间缓慢的原因分析">
-                <i class="fa fa-chevron-left"></i> 系统执行时间缓慢的原因分析
+              <a href="/2017/02/09/php运行机制以及底层原理/" rel="next" title="php运行机制以及底层原理">
+                <i class="fa fa-chevron-left"></i> php运行机制以及底层原理
               </a>
             
           </div>
@@ -375,10 +341,6 @@ uname 显示操作系统的相">
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/09/php运行机制以及底层原理/" rel="prev" title="php运行机制以及底层原理">
-                php运行机制以及底层原理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

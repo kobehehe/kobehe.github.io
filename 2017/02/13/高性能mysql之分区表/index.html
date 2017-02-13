@@ -84,16 +84,19 @@
 
 
 
-<meta name="description" content="1，Webserver(nginx):这一层可以轻松分布式部署的，结合智能DNS解析可以简易的防止单点故障、实现区域访问加速，结合lvs很容易实现负载均衡。这一层主要负责处理静态请求和转发php请求至第二层的php处理节点，至于静态资源地址(http://misc.xxxx.com)可以单独拿出来部署，或者直接使用商用的云存储服务（国内七牛不错，国外有Amazon S3）">
+<meta name="description" content="mysql在创建表时使用PARTITION BY子句定义每个分区存放的数据。在执行查询的时候优化器会根据分区定义过滤那些没有我们需要数据的分区，这样只需要查找包含需要数据的分区就可以了
+以下场景适合运用表分区技术：1，表非常大以至于无法全部放在内存中。2，分区表的数据更容易维护，可以对一个独立的分区进行优化，检查，修复等操作。3，分区表的数据可以在不同的无力设备上，从而高效的利用多个硬件设备4，可">
 <meta property="og:type" content="article">
-<meta property="og:title" content="php支持高并发的网站的处理">
-<meta property="og:url" content="http://yoursite.com/2017/02/10/php支持高并发的网站的处理/index.html">
+<meta property="og:title" content="高性能mysql之分区表">
+<meta property="og:url" content="http://yoursite.com/2017/02/13/高性能mysql之分区表/index.html">
 <meta property="og:site_name" content="那年一路向北...">
-<meta property="og:description" content="1，Webserver(nginx):这一层可以轻松分布式部署的，结合智能DNS解析可以简易的防止单点故障、实现区域访问加速，结合lvs很容易实现负载均衡。这一层主要负责处理静态请求和转发php请求至第二层的php处理节点，至于静态资源地址(http://misc.xxxx.com)可以单独拿出来部署，或者直接使用商用的云存储服务（国内七牛不错，国外有Amazon S3）">
-<meta property="og:updated_time" content="2017-02-10T06:19:41.000Z">
+<meta property="og:description" content="mysql在创建表时使用PARTITION BY子句定义每个分区存放的数据。在执行查询的时候优化器会根据分区定义过滤那些没有我们需要数据的分区，这样只需要查找包含需要数据的分区就可以了
+以下场景适合运用表分区技术：1，表非常大以至于无法全部放在内存中。2，分区表的数据更容易维护，可以对一个独立的分区进行优化，检查，修复等操作。3，分区表的数据可以在不同的无力设备上，从而高效的利用多个硬件设备4，可">
+<meta property="og:updated_time" content="2017-02-13T08:25:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="php支持高并发的网站的处理">
-<meta name="twitter:description" content="1，Webserver(nginx):这一层可以轻松分布式部署的，结合智能DNS解析可以简易的防止单点故障、实现区域访问加速，结合lvs很容易实现负载均衡。这一层主要负责处理静态请求和转发php请求至第二层的php处理节点，至于静态资源地址(http://misc.xxxx.com)可以单独拿出来部署，或者直接使用商用的云存储服务（国内七牛不错，国外有Amazon S3）">
+<meta name="twitter:title" content="高性能mysql之分区表">
+<meta name="twitter:description" content="mysql在创建表时使用PARTITION BY子句定义每个分区存放的数据。在执行查询的时候优化器会根据分区定义过滤那些没有我们需要数据的分区，这样只需要查找包含需要数据的分区就可以了
+以下场景适合运用表分区技术：1，表非常大以至于无法全部放在内存中。2，分区表的数据更容易维护，可以对一个独立的分区进行优化，检查，修复等操作。3，分区表的数据可以在不同的无力设备上，从而高效的利用多个硬件设备4，可">
 
 
 
@@ -121,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/02/10/php支持高并发的网站的处理/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/02/13/高性能mysql之分区表/"/>
 
 
 
 
 
-  <title> php支持高并发的网站的处理 | 那年一路向北... </title>
+  <title> 高性能mysql之分区表 | 那年一路向北... </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -230,7 +233,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/10/php支持高并发的网站的处理/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/13/高性能mysql之分区表/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="xuxiaochen">
@@ -254,7 +257,7 @@
             
             
               
-                php支持高并发的网站的处理
+                高性能mysql之分区表
               
             
           </h1>
@@ -269,8 +272,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-10T13:52:24+08:00">
-                2017-02-10
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-13T16:03:31+08:00">
+                2017-02-13
               </time>
             
 
@@ -305,7 +308,10 @@
       
 
       
-        <p>1，Webserver(nginx):这一层可以轻松分布式部署的，结合智能DNS解析可以简易的防止单点故障、实现区域访问加速，结合lvs很容易实现负载均衡。这一层主要负责处理静态请求和转发php请求至第二层的php处理节点，至于静态资源地址(<a href="http://misc.xxxx.com)可以单独拿出来部署，或者直接使用商用的云存储服务（国内七牛不错，国外有Amazon" target="_blank" rel="external">http://misc.xxxx.com)可以单独拿出来部署，或者直接使用商用的云存储服务（国内七牛不错，国外有Amazon</a> S3）<br><a id="more"></a><br>2，php处理节点：一个节点其实就是一个监听端口的系统进程，webserver的请求通过负载均衡器进行分发，很好实现分布式和负载均衡。类似于php自带的php-fpm,其实facebook出的hhvm性能非常好，但是还不是很稳定。<br>3，高速缓存：用的memcached,这一层的作用主要减轻数据库io和加快热数据访问。主要有两种方式，一种在程序的全局层面加一个缓存处理，这种方法代码耦合度低，但是有效命中率不高，有些项目不一定适应，另一种是具体的数据存取加缓存处理，这种办法耦合度较高，但是缓存命中率非常高，几乎没有无效缓存存在。<br>4，数据库 ：我现在的项目数据规模不大，暂时只用了单台数据库，但是程序逻辑上已做好了数据库线性扩展的准备。其实数据库层的扩展是老生常谈了，常用手段是分库分表，这一块需要在前期的代码就打下基础，另外更平滑地手段是使用中间件，比如360的Atlas，阿里巴巴的cobar，淘宝的TDDL，中间件可以在不大范围变更代码的情况下扩展，但是具体的使用场景还是有限的，具体项目还需单独考察。<br>5，其他：根据不同的项目，架构还可以选择性的使用队列，我现在用的beantalkd,redis也是一个很好的选择。队列常用的使用环境是邮件发送和站内消息推送上面，在某些场景下也可以作为核心数据库的缓冲，对应对大并发或者突发性流量也是不错的选择。</p>
+        <p>mysql在创建表时使用PARTITION BY子句定义每个分区存放的数据。在执行查询的时候优化器会根据分区定义过滤那些没有我们需要数据的分区，这样只需要查找包含需要数据的分区就可以了</p>
+<p>以下场景适合运用表分区技术：<br>1，表非常大以至于无法全部放在内存中。<br>2，分区表的数据更容易维护，可以对一个独立的分区进行优化，检查，修复等操作。<br>3，分区表的数据可以在不同的无力设备上，从而高效的利用多个硬件设备<br>4，可以使用分区表来避免某些特殊的瓶颈<br>5，如果需要，还可以备份和恢复独立的分区。</p>
+<p>分区表的主要限制<br>1，一个表最多只有1024个分区。<br>2，在mysql5.1中，分区表达式必须是整数，或者返回整数的表达式。在mysql5.5中某些场景可以直接利用列来进行区分<br>3，如果分区中有主键或者唯一索引的列，那么所有主建列和唯一索引列都必须包含进来。<br>4，分区表中无法使用外键约束。</p>
+<p>对于大多数系统来说100个左右的分区是没有问题的。<br>mysql只能在使用分区函数的列本身进行比较时才能过滤分区，而不能根据表达式的值去过滤分区，即使这个表达式就是分区函数也不行。</p>
 
       
     </div>
@@ -332,8 +338,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/09/php运行机制以及底层原理/" rel="next" title="php运行机制以及底层原理">
-                <i class="fa fa-chevron-left"></i> php运行机制以及底层原理
+              <a href="/2017/02/13/高性能mysql之索引篇/" rel="next" title="高性能mysql之索引篇">
+                <i class="fa fa-chevron-left"></i> 高性能mysql之索引篇
               </a>
             
           </div>
@@ -341,10 +347,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/13/高性能mysql之索引篇/" rel="prev" title="高性能mysql之索引篇">
-                高性能mysql之索引篇 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

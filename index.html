@@ -310,17 +310,14 @@
 
       
         
-          
-            <p>将所有功能建立在继承体系上会导致系统中的类爆炸式的增多。更糟糕的是当你尝试继承数上不同的分支做相似的修改时，代码会产生重复。<br>装饰模式是解决此类问题很好的办法。代码如下<br>bstract class tile{<br>    abstract function getWealthFactor();<br>}</p>
-<p>class Plains extends tile(){<br>    private $wealthFactor = 2;<br>    function getWealthFactor(){<br>        return $this-&gt;wealthFactor;<br>    }<br>}</p>
-<p>//重点代码<br>abstract class tileDecorator extends tile(){<br>    protected $tile;<br>    function __construct($tile){<br>        $this-&gt;tile = $tile;<br>    }<br>}</p>
-<p>class diamondDecorator extends tileDecorator(){<br>    function getWealthFactor(){<br>        return $this-&gt;tile-&gt;getWealthFactor()+2;<br>    }<br>}</p>
-<p>class pollutionDecorator extends tileDecorator(){<br>    function getWealthFactor(){<br>        return $this-&gt;tile-&gt;getWealthFactor()-4;<br>    }<br>}</p>
-<p>$Plains = new Plains();<br>$Plains-&gt;getWealthFactor; //2</p>
-<p>$tile = new diamondDecorator(new Plains());<br>$tile-&gt;getWealthFactor();//4</p>
-<p>$tile = new pollutionDecorator(new diamondDecorator(new Plains()))<br>$tile-&gt;getWealthFactor();//0<br>若不用装饰模式，那么则既有污染又有钻石的情况又需要增加一个新类来继承。<br>若如代码所示，加一个区域装饰器tileDecorator，代码就可以灵活组合，降低耦合。需要的类大大减少，组建系统也更加的灵活。可以更容易的增加若干新的装饰器来满足各种复杂的情况。</p>
-
-          
+          <p>将所有功能建立在继承体系上会导致系统中的类爆炸式的增多。更糟糕的是当你尝试继承数上不同的分支做相似的修改时，代码会产生重复。<br>装饰模式是解决此类问题很好的办法。代码如下<br>bstract class tile{<br>    abstract function getWealthFactor();<br>}<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/15/设计模式之装饰模式/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

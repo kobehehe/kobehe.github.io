@@ -310,8 +310,7 @@
 
       
         
-          
-            <p>1，将“1234567890” 转为 “1，234，567，890”；</p>
+          <p>1，将“1234567890” 转为 “1，234，567，890”；</p>
 <pre><code>function($str,$count){
     if(empty($str || $count&lt;=0)){
         return false;
@@ -322,38 +321,14 @@
     $str3 = strrev($str2);
     return $str3;
 };
-&lt;!--more--&gt;
-</code></pre><p>2,斐波那契数列求第n个的值（台阶问题);</p>
-<pre><code>function($n){
-    $indexTwo = 1;
-    $indexOne = 2;
-    if($n == 1){
-        return $indexTwo;
-    }
-    if($n == 2){
-        return $indexOne;
-    }
-    for($i=3;$i&lt;=$n;$i++){
-        $count = $indexTwo+$indexOne;
-        $indexTwo = $indexOne;
-        $indexOne = $count;
-    }
-    return $count;
-}
-</code></pre><p>3,求三个数的最大值    和最小值；</p>
-<pre><code>function getMax($a,$b,$c){
-    $max = $a;
-    if($b&gt;$max){
-        $max = $b;
-    }
-    if($c&gt;$max){
-        $max = $c;
-    }
-    return $max;    
-}
-最小值同理
-</code></pre>
-          
+</code></pre><p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/17/php算法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
